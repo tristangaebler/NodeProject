@@ -11,7 +11,7 @@
 
 template <class Type>
 Node<Type>::Node() {
-	// TODO Auto-generated constructor stub
+
 	value = 0;
 	pointers = nullptr;
 
@@ -19,7 +19,7 @@ Node<Type>::Node() {
 
 template <class Type>
 Node<Type>::Node(Type value) {
-	// TODO Auto-generated constructor stub
+
 	this -> value = value;
 	pointers = nullptr;
 
