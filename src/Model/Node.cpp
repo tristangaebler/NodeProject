@@ -12,7 +12,6 @@
 template <class Type>
 Node<Type>::Node() {
 
-	value = 0;
 	pointers = nullptr;
 
 }
@@ -31,14 +30,19 @@ Node<Type>::~Node() {
 }
 
 template <class Type>
-Type Node<Type> :: getValue()
-{
+Type Node<Type> :: getValue() {
 	return this -> value;
 }
 
 template <class Type>
-Node<Type> * Node<Type> :: getPointers()
-{
+Node<Type> * Node<Type> :: getPointers() {
 	return this -> pointers;
 }
+
+template <class Type>
+Node<Type> * Node<Type> :: getPointers() {
+	return this -> pointers;
+
+}
+
 

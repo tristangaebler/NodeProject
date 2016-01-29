@@ -8,7 +8,9 @@
 #ifndef CONTROLLER_NODECONTROLLER_H_
 #define CONTROLLER_NODECONTROLLER_H_
 
+#include <iostream>
 #include "../Model/Node.h"
+#include "../Model/Node.cpp"
 
 class NodeController {
 private :
