@@ -35,14 +35,14 @@ Type Node<Type> :: getValue() {
 }
 
 template <class Type>
-Node<Type> * Node<Type> :: getPointers() {
-	return this -> pointers;
+void Node<Type> :: setValue(Type value) {
+	this->value = value;
 }
+
 
 template <class Type>
 Node<Type> * Node<Type> :: getPointers() {
 	return this -> pointers;
-
 }
 
 

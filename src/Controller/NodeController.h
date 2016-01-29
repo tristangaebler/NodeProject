@@ -9,15 +9,23 @@
 #define CONTROLLER_NODECONTROLLER_H_
 
 #include <iostream>
+#include <string>
 #include "../Model/Node.h"
 #include "../Model/Node.cpp"
+#include "../Model/ArrayNode.h"
+#include "../Model/ArrayNode.cpp"
+
+
+using namespace std;
 
 class NodeController {
 private :
-	Node<int> myNode;
+	Node<int> intNode;
+	ArrayNode<string> stringArrayNode;
 public:
 	NodeController();
 	virtual ~NodeController();
+	void start();
 };
 
 #endif /* CONTROLLER_NODECONTROLLER_H_ */
