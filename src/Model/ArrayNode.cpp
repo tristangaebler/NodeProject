@@ -6,13 +6,12 @@
  */
 
 #include "ArrayNode.h"
-#include <iostream>
+
 
 template <class Type>
 ArrayNode<Type>::ArrayNode() : Node<Type>(){
 
 	this->next = nullptr;
-
 
 }
 
@@ -35,6 +34,11 @@ ArrayNode<Type>::ArrayNode(Type value, ArrayNode * next) : Node<Type>(value) {
 template <class Type>
 ArrayNode<Type>::~ArrayNode() {
 	// TODO Auto-generated destructor stub
+}
+
+template <class Type>
+void ArrayNode<Type> :: setNext(ArrayNode<Type> * next) {
+
 }
 
 template <class Type>
