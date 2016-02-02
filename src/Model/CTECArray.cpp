@@ -51,6 +51,14 @@ void CTECArray<Type>:: set(int position, Type value) {
 		cerr << "No stop..." << endl;
 	}
 	else {
+		ArrayNode<Type> * current = head;
+		for(int spot = 0; spot <= position; spot++) {
 
+					if(spot != position) {
+					//	current = current->getNext();
+					}
+					else {
+						return current->getValue();
+					}
 	}
 }
