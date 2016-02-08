@@ -2,7 +2,7 @@
  * ArrayNode.cpp
  *
  *  Created on: Jan 29, 2016
- *      Author: tgae6529
+ *      Author: Tristan Gaebler
  */
 
 #include "ArrayNode.h"
