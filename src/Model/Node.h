@@ -17,10 +17,10 @@ private:
 	Node * pointers;	//Pointer to the array of Nodes that are linked to the node
 public:
 	Node();
-	Node(Type value);
+	Node(const Type& value);
 	virtual ~Node();
 	Type getValue();
-	void setValue(Type value);
+	void setValue( const Type& value);
 	Node * getPointers();
 };
 

@@ -20,7 +20,7 @@ ArrayNode<Type>::ArrayNode() : Node<Type>(){
  * ArrayNode Method that returns type. Has a template <class Type>. This points to value which is assigned to value. This points to next which is assigned to nullPointer.
  */
 template <class Type>
-ArrayNode<Type>::ArrayNode(Type value) : Node<Type>(value) {
+ArrayNode<Type>::ArrayNode(const Type& value) : Node<Type>(value) {
 
 	this->value = value;
 	this->next = nullptr;
@@ -30,14 +30,14 @@ ArrayNode<Type>::ArrayNode(Type value) : Node<Type>(value) {
  * ArrayNode Method that returns type. Takes value and next pointer as a parameter. This points to value which is assigned to value. This points to next which is assigned to nullPointer.
  */
 template <class Type>
-ArrayNode<Type>::ArrayNode(Type value, ArrayNode * next) : Node<Type>(value) {
+ArrayNode<Type>::ArrayNode(const Type& value, ArrayNode * next) : Node<Type>(value) {
 
 	this->value = value;
 	this->next = next;
 }
 
 /*
- * The ArrayNode destructor.
+ * The ArrayNode destructor. Nothing currently in it.
  */
 template <class Type>
 ArrayNode<Type>::~ArrayNode() {
