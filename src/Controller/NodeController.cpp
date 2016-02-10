@@ -6,6 +6,8 @@
  */
 
 #include "NodeController.h"
+#include <iostream>
+
 /*
  * This is the Constructor of the NodeController class. We are giving the CTECArray 5 indexes or spots.
  */
@@ -23,13 +25,19 @@ NodeController::~NodeController() {
  * This is the start method that is void. We are giving the CTECArray values. Then we print the values out using cout <<.
  */
 void NodeController :: start() {
+
+	cout << "TESTING 123" << endl;
+
 	for(int index = 0; index < myIntArray->getSize(); index++) {
+		cout << "build" << index << endl;
 		myIntArray->set(index, (23 * index));
 
 	}
-cout << "somehting" << endl;
 	for(int index = 0; index < myIntArray->getSize(); index++) {
+		cout << "export" << index << endl;
 		cout << "These are some integers that " << index << "contain " << myIntArray->get(index) << endl;
 	}
+
+	cout << "TESTING 123" << endl;
 }
 
