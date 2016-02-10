@@ -57,11 +57,11 @@ int CTECArray<Type>::getSize() {
 template<class Type>
 Type CTECArray<Type>::get(int position) {
 
-	assert(position < size && position >= 0);
+	assert(position < size && position >= 0); //inclusive check
 
 	ArrayNode<Type> * current = head;
 	//Inclusive becase I am inside the bounds :)>
-	for (int spot = 0; spot <= position; spot++) {
+	for (int spot = 0; spot <= position; spot++) { //inclusive check
 
 		if (spot != position) {
 			current = current->getNext();

@@ -10,12 +10,8 @@
  * This is the Constructor of the NodeController class. We are giving the CTECArray 5 indexes or spots.
  */
 NodeController::NodeController() {
-	//this->intNode.setValue(5);
-	//this->stringArrayNode.setValue("words are fun");
 
-	myStringArray = new CTECArray<string>(5); //Private CTEC Array made up of Strings
-
-
+	myIntArray = new CTECArray<int>(5);
 }
 /*
  * This is the destructor for the NodeController class. Currently nothing is happening in it. I do not fully understand the destructor.
@@ -27,25 +23,13 @@ NodeController::~NodeController() {
  * This is the start method that is void. We are giving the CTECArray values. Then we print the values out using cout <<.
  */
 void NodeController :: start() {
-	//cout << intNode.getValue() << endl;
-	//cout << stringArrayNode.getValue() << endl;
+	for(int index = 0; index < myIntArray->getSize(); index++) {
+		myIntArray->set(index, (23 * index));
 
-	string first = "first";
-	string second = "second";
-	string third = "third";
-	string fourth = "fourth";
-	string fifth = "fifth";
-
-	myStringArray -> set(0, first);
-	cout << myStringArray->get(0) << endl;
-	myStringArray -> set(1, second);
-	myStringArray -> set(2, third);
-	myStringArray -> set(3, fourth);
-	myStringArray -> set(4, fifth);
-
-	//Prints out the index 5 times.
-	for(int index = 0; index < myStringArray->getSize(); index++) {
-		cout << "The contents at index " << index << " are: " << myStringArray->get(index) << endl;
+	}
+cout << "somehting" << endl;
+	for(int index = 0; index < myIntArray->getSize(); index++) {
+		cout << "These are some integers that " << index << "contain " << myIntArray->get(index) << endl;
 	}
 }
 
