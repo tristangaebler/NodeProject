@@ -26,6 +26,8 @@ NodeController::~NodeController() {
  */
 void NodeController :: start() {
 
+	arrayTimer.startTimer();
+
 	cout << "TESTING 123" << endl;
 
 	for(int index = 0; index < myIntArray->getSize(); index++) {
@@ -39,5 +41,8 @@ void NodeController :: start() {
 	}
 
 	cout << "TESTING 123" << endl;
+
+	arrayTimer.stopTimer();
+	arrayTimer.displayTimerInfo();
 }
 

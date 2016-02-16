@@ -16,18 +16,15 @@
 #include "../Model/ArrayNode.cpp"
 #include "../Model/CTECArray.h"
 #include "../Model/CTECArray.cpp"
-
+#include "../Model/Timer.h"
+#include <string>
 
 using namespace std;
 
 class NodeController {
 private :
-	//Node<int> intNode;
-	//ArrayNode<string> stringArrayNode;
-
 	CTECArray<int> * myIntArray;
-
-
+	Timer arrayTimer;
 public:
 	NodeController();
 	virtual ~NodeController();

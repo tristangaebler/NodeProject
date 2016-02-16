@@ -7,6 +7,7 @@
 
 #include "Timer.h"
 #include <iomanip>
+#include <iostream>
 using namespace std;
 
 Timer::Timer() {
@@ -20,6 +21,12 @@ Timer::~Timer() {
 }
 
 void Timer::displayTimerInfo() {
+
+	cout << fixed;
+	cout << setprecision(8);
+
+	cout << executionTime << " μs (microseconds) for the code " << endl;
+	cout << "Which is " << float(executionTime)/CLOCKS_PER_SEC << " seconds" << endl;
 
 }
 
