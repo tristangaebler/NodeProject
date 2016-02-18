@@ -16,6 +16,7 @@ private:
 	int size;
 	ArrayNode<Type> * Head;
 public:
+
 	CTECList(int size);
 	virtual ~CTECList();
 	void set(int position, const Type& value);
