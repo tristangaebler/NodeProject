@@ -13,7 +13,7 @@
 template <class Type>
 class CTECList {
 private:
-	int size;
+	int size();
 	ArrayNode<Type> * Head;
 	ArrayNode<Type> * end;
 public:
