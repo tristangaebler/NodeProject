@@ -89,6 +89,11 @@ Type CTECList<Type>::removeFromFront() {
 template <class Type>
 Type CTECList<Type>::removeFromEnd() {
 
+	//Loop over size
+	//or
+	//Loop until ->getNext() == nullptr
+
+
 }
 
 template <class Type>
