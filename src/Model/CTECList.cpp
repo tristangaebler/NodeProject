@@ -12,7 +12,7 @@
 using namespace std;
 
 template<class Type>
-CTECList<Type>::CTECList(int size) {
+CTECList<Type>::CTECList() {
 
 
 }
@@ -23,7 +23,7 @@ CTECList<Type>::~CTECList() {
 }
 
 template <class Type>
-void CTECList<Type>::set(int position, const Type& value) {
+Type CTECList<Type>::set(int position, const Type& value) {
 
 }
 
