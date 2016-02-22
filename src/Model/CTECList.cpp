@@ -22,11 +22,6 @@ CTECList<Type>::~CTECList() {
 }
 
 template <class Type>
-Type CTECList<Type>::set(int position, const Type& value) {
-
-}
-
-template <class Type>
 Type CTECList<Type>::get(int position) {
 
 }
@@ -94,6 +89,16 @@ Type CTECList<Type>::removeFromIndex(int index) {
 template <class Type>
 Type CTECList<Type>::set(int position, const Type& value) {
 
+	assert(position < size && position >= 0);
+
+	ArrayNode<Type> * current = Head;
+	for (int spot = 0; spot <= position; spot++) {
+		if (spot != position) {
+			current = current->getNext();
+		} else {
+			current->setValue(value);
+		}
+	}
 }
 
 template <class Type>
