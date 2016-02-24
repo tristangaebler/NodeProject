@@ -74,21 +74,34 @@ Type CTECList<Type>::getFromIndex(int index, Type value) {
 	assert(index < size && index <= 0); //Check if the index is reasonable
 
 	ArrayNode<Type> * current = Head;
-	for(int spot = 0; spot <= index; spot++) {
+	for(int spot = 0; spot > index; spot++) {
+		if(index ) {
+			current = current->getNext();
+		}
+		else if() {
 
+		}
 	}
 }
+
 
 template <class Type>
 Type CTECList<Type>::removeFromFront() {
 
+	Type returnValue; //In case we need to use the value we are emoving
+
+	assert(size > 0);
 	//Create a pointer to what is after head
 	ArrayNode<Type>* newHead = new ArrayNode<Type>();
 	newHead = Head->getNext();
+	//Get what was in the head node
+	returnValue = Head->getValue();
 	//Delete what head is pointing to
 	delete Head;
 	//Set head to new head
 	this->Head = newHead;
+
+	return returnValue;
 
 }
 
