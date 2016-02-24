@@ -9,6 +9,7 @@
 #define MODEL_CTECLIST_H_
 
 #include "ArrayNode.h"
+#include <assert.h>
 
 template <class Type>
 class CTECList {
@@ -26,7 +27,7 @@ public:
 	void addAtIndex(int index, const Type& valuel);
 	Type getFront();
 	Type getEnd();
-	Type getFromIndex();
+	Type getFromIndex(int index, Type value);
 	Type removeFromFront();
 	Type removeFromEnd();
 	Type removeFromIndex(int index);

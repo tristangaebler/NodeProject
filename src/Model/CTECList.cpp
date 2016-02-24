@@ -69,8 +69,14 @@ Type CTECList<Type>::getEnd() {
 }
 
 template <class Type>
-Type CTECList<Type>::getFromIndex() {
+Type CTECList<Type>::getFromIndex(int index, Type value) {
 
+	assert(index < size && index <= 0); //Check if the index is reasonable
+
+	ArrayNode<Type> * current = Head;
+	for(int spot = 0; spot <= index; spot++) {
+
+	}
 }
 
 template <class Type>
@@ -91,9 +97,7 @@ Type CTECList<Type>::removeFromEnd() {
 
 	//Loop over size
 	//or
-	//Loop until ->getNext() == nullptr
-
-
+	//Loop until ->getNext() == nullptr=
 }
 
 template <class Type>
