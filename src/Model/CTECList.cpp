@@ -37,6 +37,7 @@ CTECList<Type>::~CTECList() {
 template <class Type>
 Type CTECList<Type>::get(int position) {
 
+
 }
 
 template <class Type>
@@ -47,15 +48,21 @@ void CTECList<Type>::add(const Type& value) {
 template <class Type>
 void CTECList<Type>::deletePos(int position) {
 
+
 }
 
 template <class Type>
 int CTECList<Type>::getSize() {
 
+	return this->size;
+
 }
 
 template <class Type>
 void CTECList<Type>::addToFront(const Type& value) {
+
+	ArrayNode<Type> * first, *newNode, *last;
+	int count = 0;
 
 }
 
@@ -174,13 +181,9 @@ Type CTECList<Type>::removeFromIndex(int index) {
 
 		}
 
-
 	}
-
 	this->calculateSize();
 	return returnValue;
-
-
 }
 
 template <class Type>
@@ -212,13 +215,6 @@ Type CTECList<Type>::get(int position) {
 		}
 	}
 }
-
-
-
-
-
-
-
 
 
 
