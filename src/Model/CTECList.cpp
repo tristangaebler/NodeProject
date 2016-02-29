@@ -20,7 +20,18 @@ CTECList<Type>::CTECList() {
 
 template <class Type>
 CTECList<Type>::~CTECList() {
-
+	ArrayNode<Type> * deleteMe = Head;
+	for (int index = 0; index < size; index++) {
+		if (deleteMe->getNext() != nullptr) {
+			Head = deleteMe->getNext();
+			deleteMe->setNext(nullptr);
+		}
+		else {
+			delete deleteMe->getNext();
+			deleteMe = Head;
+		}
+	}
+	delete Head;
 }
 
 template <class Type>
