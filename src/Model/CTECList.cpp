@@ -53,6 +53,9 @@ int CTECList<Type>::getSize() {
 template <class Type>
 void CTECList<Type>::addToFront(const Type& value) {
 
+	assert(value != nullptr);
+
+	insert(value);
 
 }
 
@@ -117,6 +120,9 @@ void CTECList<Type>::insert(const Type& newItem) {
 template <class Type>
 void CTECList<Type>::addToEnd(const Type& value) {
 
+	assert(value != nullptr);
+
+	insert(value);
 
 }
 
