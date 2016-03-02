@@ -185,16 +185,21 @@ Type CTECList<Type>::removeFromFront() {
 template <class Type>
 Type CTECList<Type>::removeFromEnd() {
 
-	//Loop over size
-	//or
-	//Loop until ->getNext() == nullptr=
-	//asert size > 0
-	//size == 1
+	Type returnValue;
+
 	assert(size > 0);
-	Type valueToRemove;
+
+	ArrayNode<Type>* newHead = new ArrayNode<Type>();
+	newHead = end->getNext();
+
+	returnValue = end->getValue();
+
+	delete end;
+
+	this->end = newHead;
 
 	this->calculateSize();
-	return valueToRemove;
+	return returnValue;
 }
 
 template <class Type>
