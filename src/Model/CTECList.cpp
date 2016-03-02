@@ -59,7 +59,9 @@ void CTECList<Type>::addToFront(const Type& value) {
 template <class Type>
 void CTECList<Type>::insert(const Type& newItem) {
 
+	ArrayNode<Type> *current, *trailCurrent, *newNode;
 	ArrayNode<Type> * first, *newNode, *last;
+
 	bool found;
 	int count = 0;
 
@@ -67,37 +69,49 @@ void CTECList<Type>::insert(const Type& newItem) {
 	newNode->info = newItem;
 	newNode->link = nullptr;
 
-	if(first == nullptr) {
+	if(first == nullptr)
+	{
 		first = newNode;
 		last = newNode;
 		count++;
-	} else {
-		Head = first;
+	}
+	else
+	{
+		current = first;
 		found = false;
-		while(Head != nullptr && !found) {
-			if(first->info >= newItem) {
-				found = true;
-			} else {
-				newNode = first;
-				first = first->link;
-			}
 
-		if(first == false) {
+		while(current != nullptr && !found)
+		{
+			if(current->info >= newItem)
+			{
+				found = true;
+			}
+			else
+			{
+				trailCurrent = current;
+				current = current->link;
+			}
+		}
+		if(current == first)
+		{
 			newNode->link = first;
 			first = newNode;
 			count++;
-		} else {
-			newNode->link = newNode;
-			newNode->link = first;
+		}
+		else
+		{
+			trailCurrent->link = newNode;
+			newNode->link = current;
 
-			if(first == nullptr)
+			if(current == nullptr)
+			{
 				last = newNode;
+			}
 
 			count++;
 		}
-
-		}
 	}
+
 }
 
 template <class Type>
@@ -149,7 +163,6 @@ Type CTECList<Type>::getFront() {
 
 template <class Type>
 Type CTECList<Type>::getEnd() {
-
 	assert(end != nullptr);
 
 	return this->end;
@@ -185,21 +198,37 @@ Type CTECList<Type>::removeFromFront() {
 template <class Type>
 Type CTECList<Type>::removeFromEnd() {
 
-	Type returnValue;
-
+	//Loop over size
+	//grab the value fromt hte last node
+	//set the next to last node to point to nullptr
+	//set the next to the last node as end
+	//delete the old last node
+	//Before return the variable call calcuklatezise()
+	//return value
 	assert(size > 0);
+	Type valueToRemove;
+	if(size == 1) {
+		valueToRemove = removeFromFront();
+		end = nullptr;
+		Head = nullptr;
+		calculateSize();
 
-	ArrayNode<Type>* newHead = new ArrayNode<Type>();
-	newHead = end->getNext();
+		return valueToRemove;
+	} else {
+		ArrayNode<Type> * current = Head;
+		for(int spot = 0; spot < size-1; spot++) {
+			current = current->getNext();
+		}
 
-	returnValue = end->getValue();
+		valueToRemove = current->getNext()->getValue();
+		end = current;
+		delete current->getNext();
 
-	delete end;
+		this->calculateSize();
 
-	this->end = newHead;
+		return valueToRemove;
+	}
 
-	this->calculateSize();
-	return returnValue;
 }
 
 template <class Type>
