@@ -26,6 +26,7 @@ public:
 	void addToFront(const Type& value);
 	void addToEnd(const Type& value);
 	void addAtIndex(int index, const Type& valuel);
+	void insert(const Type& newItem);
 	Type getFront();
 	Type getEnd();
 	Type getFromIndex();

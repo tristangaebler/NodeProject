@@ -53,12 +53,18 @@ int CTECList<Type>::getSize() {
 template <class Type>
 void CTECList<Type>::addToFront(const Type& value) {
 
+
+}
+
+template <class Type>
+void CTECList<Type>::insert(const Type& newItem) {
+
 	ArrayNode<Type> * first, *newNode, *last;
 	bool found;
 	int count = 0;
 
 	newNode = new ArrayNode<Type>;
-	newNode->info = value;
+	newNode->info = newItem;
 	newNode->link = nullptr;
 
 	if(first == nullptr) {
@@ -69,7 +75,7 @@ void CTECList<Type>::addToFront(const Type& value) {
 		Head = first;
 		found = false;
 		while(Head != nullptr && !found) {
-			if(first->info >= value) {
+			if(first->info >= newItem) {
 				found = true;
 			} else {
 				newNode = first;
@@ -92,7 +98,6 @@ void CTECList<Type>::addToFront(const Type& value) {
 
 		}
 	}
-
 }
 
 template <class Type>
