@@ -72,8 +72,24 @@ void CTECList<Type>::addToFront(const Type& value) {
 			if(first->info >= value) {
 				found = true;
 			} else {
-
+				newNode = first;
+				first = first->link;
 			}
+
+		if(first == false) {
+			newNode->link = first;
+			first = newNode;
+			count++;
+		} else {
+			newNode->link = newNode;
+			newNode->link = first;
+
+			if(first == nullptr)
+				last = newNode;
+
+			count++;
+		}
+
 		}
 	}
 
