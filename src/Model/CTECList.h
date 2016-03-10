@@ -14,7 +14,7 @@
 template <class Type>
 class CTECList {
 private:
-	int size();
+	ArrayNode<int> size();
 	ArrayNode<Type> * Head;
 	ArrayNode<Type> * end;
 	void calculateSize();

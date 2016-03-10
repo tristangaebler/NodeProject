@@ -24,7 +24,9 @@ using namespace std;
 class NodeController {
 private :
 	CTECArray<int> * myIntArray;
+	CTECList<int> * numbers;
 	Timer arrayTimer;
+	void testLists();
 public:
 	NodeController();
 	virtual ~NodeController();

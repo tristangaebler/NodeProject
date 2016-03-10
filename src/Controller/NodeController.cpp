@@ -14,6 +14,7 @@
 NodeController::NodeController() {
 
 	myIntArray = new CTECArray<int>(5);
+	numbers = new CTECList<int>();
 }
 /*
  * This is the destructor for the NodeController class. Currently nothing is happening in it. I do not fully understand the destructor.
@@ -24,7 +25,16 @@ NodeController::~NodeController() {
 /*
  * This is the start method that is void. We are giving the CTECArray values. Then we print the values out using cout <<.
  */
+
+void NodeController::testLists() {
+	numbers->addToFront(3);
+	numbers->addToEnd(8);
+
+	cout << "End should be 8 and beginning should be 3" << numbers->getEnd() <<endl;
+}
 void NodeController :: start() {
+
+	testLists();
 
 	arrayTimer.startTimer();
 

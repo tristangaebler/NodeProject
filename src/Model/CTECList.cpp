@@ -2,7 +2,7 @@
  * CTECList.cpp
  *
  *  Created on: Feb 18, 2016
- *      Author: tgae6529
+ *      Author: Tristan Gaebler
  */
 
 #include "CTECList.h"
@@ -21,17 +21,17 @@ CTECList<Type>::CTECList() {
 template <class Type>
 CTECList<Type>::~CTECList() {
 	ArrayNode<Type> * deleteMe = Head;
-	for (int index = 0; index < size; index++) {
-		if (deleteMe->getNext() != nullptr) {
-			Head = deleteMe->getNext();
-			deleteMe->setNext(nullptr);
-		}
-		else {
-			delete deleteMe->getNext();
-			deleteMe = Head;
-		}
+	for(int deleteCount = 0; delelteCount < size; deleteCount++)
+	{
+		ArrayNode<Type> * temp = current;
+		current = current->getNext();
+		delete temp;
 	}
+
 	delete Head;
+	Head = nullptr;
+	end = nullptr;
+	size = 0;
 }
 
 template <class Type>
@@ -41,8 +41,72 @@ void CTECList<Type>::add(const Type& value) {
 
 template <class Type>
 void CTECList<Type>::deletePos(int position) {
+	assert(position >= 0);
 
 
+	ArrayNode<Type> * current;
+	ArrayNode<Type> * trailCurrent;
+	bool found;
+
+	int count = 0;
+
+	if(first == nullptr)
+	{
+
+	}
+	else
+	{
+		if(first->info == deleteItem)
+		{
+			current = first;
+			first = first->link;
+			count--;
+
+			if(first == nullptr)
+			{
+				last = nullptr;
+			}
+
+			delete current;
+
+		}
+		else
+		{
+			found = false;
+			trailCurrent = first;
+
+			current = first->link;
+
+			while(current != nullptr && !found)
+			{
+				if(current->info != deleteItem)
+				{
+					trailCurrent = current;
+					current = current->link;
+				}
+				else
+				{
+					found = true;
+				}
+			} //End of the while-loop
+
+			if(found)
+			{
+				trailCurrent->link = current->link;
+				count--;
+
+				if(last == current)
+				{
+					last = trailCurrent;
+					delete current;
+				}
+				else
+				{
+					cout << "item not found in list" << endl;
+				}
+			}
+		}
+	}
 }
 
 template <class Type>
@@ -54,6 +118,10 @@ template <class Type>
 void CTECList<Type>::addToFront(const Type& value) {
 
 	assert(value != nullptr);
+
+	ArrayNode<Type> * newStuff = new ArrayNode<Type>(value, Head);
+
+	Head = newStuff;
 
 	insert(value);
 
@@ -125,8 +193,12 @@ void CTECList<Type>::addToEnd(const Type& value) {
 	insert(value);
 
 }
-
-template <class Type>
+//====NOTES====
+//Declare three pointers(prev, current, next)
+//Loop(set ptr to next)
+//Assign all pointers
+//Finish
+temp late <class Type>
 void CTECList<Type>::addAtIndex(int index, const Type& value) {
 
 
