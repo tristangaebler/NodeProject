@@ -192,6 +192,10 @@ void CTECList<Type>::addToEnd(const Type& value) {
 
 	insert(value);
 
+	ArrayNode<Type> * newStuff= new ArrayNode<Type>(value);
+	end->setNext(newStuff);
+	end = newStuff;
+
 }
 //====NOTES====
 //Declare three pointers(prev, current, next)
