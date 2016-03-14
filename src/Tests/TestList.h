@@ -1,24 +1,35 @@
 /*
- * TestList.h
+ * ListTester.h
  *
- *  Created on: Mar 14, 2016
- *      Author: tgae6529
+ *  Created on: Mar 2, 2016
+ *      Author: cody.henrichsen
  */
 
-#ifndef TESTS_TESTLIST_H_
-#define TESTS_TESTLIST_H_
+#ifndef TESTS_LISTTESTER_H_
+#define TESTS_LISTTESTER_H_
 
-#include <iostream>
+#include "../Model/CTECList.cpp"
+#include <string.h>
 
-using namespace std;
 
-class TestList {
+class ListTester
+{
 private:
-
+	int passCount;
+	std::string passMessage;
+	void setUp();
+	void tearDown();
+	CTECList<int> * testIntList;
+	CTECList<std::string> * testStringList;
 public:
-	TestList();
-	virtual ~TestList();
-	void TestLists();
+	ListTester();
+	void allTests();
+	void testConstructor();
+	void testAdds();
+	void testRemoves();
+	void testGets();
+	void testSet();
+	void testSize();
 };
 
-#endif /* TESTS_TESTLIST_H_ */
+#endif /* TESTS_LISTTESTER_H_ */
