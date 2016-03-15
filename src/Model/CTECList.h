@@ -1,8 +1,9 @@
 /*
  * CTECList.h
  *
- *  Created on: Feb 18, 2016
- *      Author: tgae6529
+ *  	Date:	March 14, 2016
+ *      Author: Tristan Gaebler
+ *      version: 0.7
  */
 
 #ifndef MODEL_CTECLIST_H_
@@ -12,32 +13,27 @@
 #include <assert.h>
 
 template <class Type>
-class CTECList {
+class CTECList
+{
 private:
-	ArrayNode<int> size();
-	ArrayNode<Type> * Head;
+	int size;
+	ArrayNode<Type> * head;
 	ArrayNode<Type> * end;
 	void calculateSize();
 public:
-
 	CTECList();
 	virtual ~CTECList();
 	int getSize();
-	void addToFront(const Type& value);
-	void addToEnd(const Type& value);
-	void addAtIndex(int index, const Type& valuel);
-	void insert(const Type& newItem);
 	Type getFront();
 	Type getEnd();
-	Type getFromIndex();
-	Type removeFromFront();
-	Type removeFromEnd();
-	Type removeFromIndex(int index);
-	Type set(int position, const Type& value);
-	Type get(int position);
-	int size();
-	void add(const Type& value);
-	void deletePos(int position); //Same thing as delete, but delete is a keyword so I can't use that for a method name
+	Type getAtIndex(int index);
+	void set(int index, const Type& value);
+	void addFront(const Type& value);
+	void addEnd(const Type& value);
+	void addAtIndex(int index, const Type& value);
+	Type removeFront();
+	Type removeEnd();
+	Type removeAtIndex(int index);
 
 };
 
