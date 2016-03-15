@@ -240,7 +240,12 @@ Type CTECList<Type>::removeEnd()
 	return thing;
 }
 
-
+/*
+ * Declare all of the nessacary nodes
+ * assert
+ * find the proper index that matches the input
+ * remove the node at index
+ */
 template<class Type>
 Type CTECList<Type>::removeAtIndex(int index)
 {
