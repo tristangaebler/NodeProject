@@ -109,7 +109,7 @@ void CTECList<Type>::set(int index, const Type& value)
 
 
 template<class Type>
-void CTECList<Type>::addFront(const Type& value)
+void CTECList<Type>::addToFront(const Type& value)
 {
 	ArrayNode<Type>* newNode = new ArrayNode<Type>(value);
 
@@ -129,7 +129,7 @@ void CTECList<Type>::addFront(const Type& value)
 
 
 template<class Type>
-void CTECList<Type>::addEnd(const Type& value)
+void CTECList<Type>::addToEnd(const Type& value)
 {
 	ArrayNode<Type>* newNode = new ArrayNode<Type>(value);
 	ArrayNode<Type>* current = head;

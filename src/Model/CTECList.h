@@ -28,8 +28,8 @@ public:
 	Type getEnd();
 	Type getAtIndex(int index);
 	void set(int index, const Type& value);
-	void addFront(const Type& value);
-	void addEnd(const Type& value);
+	void addToFront(const Type& value);
+	void addToEnd(const Type& value);
 	void addAtIndex(int index, const Type& value);
 	Type removeFront();
 	Type removeEnd();
